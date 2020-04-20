@@ -15,9 +15,10 @@ session_start(); ?>
 		<div class="form-group">
               <input type="text"   name="verficationcode" maxlength="5" autocomplete="off" required  style="width: 200px;"  placeholder="Enter Captcha" autofocus />&nbsp;
               <!--Cpatcha Image -->
-              <img src=<?php echo "captcha.php"; ?> >
+              <img src="security_image.php" alt="security code" />
               </div>
  </form>
+ <?php  unset($_SESSION['captcha']); // To reset the captcha ?>
 
  <!-- Split button -->
  <!--

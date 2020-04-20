@@ -7,7 +7,7 @@ include("../db/dbconnect.php");
 include("../include/url_users.php");
 
 if(isset($_POST['submit'])) {
-if ($_POST["verficationcode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')
+if ($_POST["verficationcode"] != $_SESSION["captcha"] OR $_SESSION["captcha"]=='')
     {
     echo "<script>alert('Incorrect captcha');</script>" ;
     }
