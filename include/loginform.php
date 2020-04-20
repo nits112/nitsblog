@@ -1,4 +1,5 @@
-<?php include("../db/dbconnect.php"); ?>
+<?php include("../db/dbconnect.php");
+session_start(); ?>
 
 <form class="navbar-form navbar-left" action=<?php echo $login_url; ?> method="POST">
         <div class="form-group">
@@ -14,7 +15,7 @@
 		<div class="form-group">
               <input type="text"   name="verficationcode" maxlength="5" autocomplete="off" required  style="width: 200px;"  placeholder="Enter Captcha" autofocus />&nbsp;
               <!--Cpatcha Image -->
-              <img src="include/captcha.php">
+              <img src=<?php echo "captcha.php"; ?> >
               </div>
  </form>
 
