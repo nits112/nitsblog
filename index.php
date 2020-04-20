@@ -1,7 +1,7 @@
 <style media="screen">
 
 .bg {
-background: url('login_background.jpeg');
+background: url('img/login_background.jpeg');
 background-repeat: no-repeat;
 background-position: top;
 background-size: contain;
