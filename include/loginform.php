@@ -14,7 +14,7 @@
 		<div class="form-group">
               <input type="text"   name="verficationcode" maxlength="5" autocomplete="off" required  style="width: 200px;"  placeholder="Enter Captcha" autofocus />&nbsp;
               <!--Cpatcha Image -->
-              <img src="captcha.php">
+              <img src="include/captcha.php">
               </div>
  </form>
 
