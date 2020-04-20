@@ -1,3 +1,5 @@
+<?php include("../db/dbconnect.php"); ?>
+
 <div class="panel-footer">
       <span>
             <a href=<?php echo "../users/profile.php?user=".$comment['commentAuthor'];?> >

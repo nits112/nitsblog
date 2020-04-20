@@ -41,7 +41,7 @@ include_once("../include/algos.php");
 <h2 style="text-align:center">Author's Desk</h2>
 
 <div class="card">
-  <img src="23.jpeg" alt="John" style="width:100%">
+  <img src="img/23.jpeg" alt="John" style="width:100%">
   <h1>Nitin Sankhe</h1>
   <p class="title">Blog Owner</p>
   <p>I am passionate about sharing the food secrets.</p>

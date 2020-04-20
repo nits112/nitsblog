@@ -1,3 +1,5 @@
+<?php include("../db/dbconnect.php"); ?>
+
 <div class="container">
 
 <form class="form-horizontal col-sm-offset-2" role="form" action="register.php" method="post">

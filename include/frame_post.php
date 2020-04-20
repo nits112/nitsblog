@@ -1,5 +1,6 @@
 <?php
 	include_once("bootstrap_cdn.php");
+	include("../db/dbconnect.php");
 ?>
 
 <!-- POSTS -->

@@ -1,11 +1,16 @@
 <?php
 
+include("../db/dbconnect.php");
+
 /* If form is submitted then authenticate it*/
 
 include("../include/url_users.php");
 
 if(isset($_POST['submit'])) {
-
+if ($_POST["verficationcode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')
+    {
+    echo "<script>alert('Incorrect captcha');</script>" ;
+    }
 	$username=$_POST['username'];
 	$password=$_POST['password'];
 

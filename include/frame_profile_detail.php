@@ -1,3 +1,4 @@
+<?php include("../db/dbconnect.php"); ?>
 
 <div class="container">
       <div class="row">

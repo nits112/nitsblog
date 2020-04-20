@@ -1,5 +1,7 @@
 <?php
 
+include("../db/dbconnect.php");
+
 include("../include/url_users.php");
 if(!isset($_SESSION['username']))
 {

@@ -1,5 +1,7 @@
 <?php
 
+include("../db/dbconnect.php");
+
 /* search.php?q='dp' */
 
 include("../include/url_posts.php");

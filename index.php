@@ -25,6 +25,7 @@ session_start();
 
 include("include/navbar.php");
 include("include/bootstrap_cdn.php");
+include("../db/dbconnect.php");
 
 if(isset($_SESSION['username'])) {
 	header("location:posts/posts.php");

@@ -1,3 +1,5 @@
+<?php include("../db/dbconnect.php"); ?>
+
 <form class="navbar-form navbar-left" action=<?php echo $login_url; ?> method="POST">
         <div class="form-group">
           	<input type="text" class="form-control" placeholder="Username" name="username">
@@ -8,6 +10,12 @@
         <button type="submit" class="btn btn-default" name="submit">Sign In</button>
 
         <a href=<?php echo $register_url; ?> class="btn btn-default">Sign Up</a>
+		
+		<div class="form-group">
+              <input type="text"   name="verficationcode" maxlength="5" autocomplete="off" required  style="width: 200px;"  placeholder="Enter Captcha" autofocus />&nbsp;
+              <!--Cpatcha Image -->
+              <img src="captcha.php">
+              </div>
  </form>
 
  <!-- Split button -->

@@ -1,5 +1,7 @@
 <?php
 
+include("../db/dbconnect.php");
+
 if(isset($_POST['submit'])) {
         // Check if name has been entered
         if (!$_POST['name']) {

@@ -1,5 +1,6 @@
 <?php
 
+include("../db/dbconnect.php");
 include("../include/url_posts.php");
 include_once("../include/algos.php");
 
