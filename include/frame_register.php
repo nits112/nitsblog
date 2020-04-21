@@ -21,7 +21,7 @@
   <div class="form-group">
     <label class="control-label col-sm-2" for="email">E mail </label>
     <div class="col-sm-5">
-      <input type="email" class="form-control" id="email" placeholder="" name="emailid" required>
+      <input type="email" class="form-control" id="email" placeholder="" name="emailid" title="Please enter e mail address in proper format" required>
     </div>
   </div>
 
