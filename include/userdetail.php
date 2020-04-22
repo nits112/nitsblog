@@ -9,7 +9,7 @@ $username=$_SESSION['username'];
 		 </li>
 
         <li>
-        	<a href=<?php echo $profile_url; echo "?user=".$username; ?> >
+        	<a href="../users/profile.php"<?php echo "?user=".$username; ?> >
         		Hello <?php echo "$username" ?>
         	</a>
         </li>
