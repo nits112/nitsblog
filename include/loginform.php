@@ -1,5 +1,8 @@
 <?php include("../db/dbconnect.php");
-session_start(); ?>
+ ?>
+<head>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
 
 <form class="navbar-form navbar-left" action=<?php echo $login_url; ?> method="POST">
         <div class="form-group">
@@ -8,11 +11,8 @@ session_start(); ?>
         <div class="form-group">
           	<input type="password" class="form-control" placeholder="Password" name="password">
         </div>
-		<div class="form-group">
-              <input type="text"   name="verficationcode" maxlength="5" autocomplete="off" required  style="width: 200px;"  placeholder="Enter Captcha" autofocus />&nbsp;
-              <!--Cpatcha Image -->
-              <img src="captcha.php">
-              </div>
+		 <div class="g-recaptcha" data-sitekey="6LeH0ewUAAAAAPV0cXZY5ppF5reFfzyO0vH9W97t"></div>
+      
 		
         <button type="submit" class="btn btn-default" name="submit">Sign In</button>
 
