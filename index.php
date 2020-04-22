@@ -20,6 +20,7 @@ $logout_url='users/logout.php';
 $register_url='users/register.php';
 $search_url='posts/search.php';
 $contact_us_url='users/contact_us.php';
+$profile_url='../users/profile.php';
 
 session_start();
 include("include/bootstrap_cdn.php");
