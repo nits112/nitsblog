@@ -13,7 +13,7 @@
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-3 col-lg-3 " align="center">
-                  <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive">
+                  <img alt="User Pic" src="img/pizza.png" class="img-circle img-responsive">
                 </div>
 
                 <div class=" col-md-9 col-lg-9 ">
@@ -42,15 +42,15 @@
                 </div>
               </div>
             </div>
-                  <!--
+                  
                  <div class="panel-footer">
                         <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
                         <span class="pull-right">
                             <a href="" type="button" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-edit"></i></a>
-                            <a href=<?php echo "../users/delete_user.php?user=".$row['username']; ?>  type=\"button\" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+                            <a href=<?php echo "../users/delete_user.php?suser=".$row['username']; ?>  type=\"button\" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-remove"></i></a>
                         </span>
                   </div>
-                -->
+                
           </div>
         </div>
       </div>
