@@ -1,4 +1,4 @@
-<? include("../db/dbconnect.php"); ?>
+<?php include("../db/dbconnect.php"); ?>
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">

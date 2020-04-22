@@ -22,15 +22,13 @@ $search_url='posts/search.php';
 $contact_us_url='users/contact_us.php';
 
 session_start();
-
-include("include/navbar.php");
 include("include/bootstrap_cdn.php");
+include("include/navbar.php");
+
 include("../db/dbconnect.php");
-
-if(isset($_SESSION['username'])) {
-	header("location:posts/posts.php");
+if(isset($_SESSION['username'])){
+include("include/url_posts.php");
 }
-
 ?>
 
 <div class="row">

@@ -8,15 +8,18 @@ session_start(); ?>
         <div class="form-group">
           	<input type="password" class="form-control" placeholder="Password" name="password">
         </div>
-		&nbsp;
-		<div class="g-recaptcha" data-sitekey="6LcUBOwUAAAAAInjkCnz8JRZpuwuJ4zul1_ppnNs"></div>
+		<div class="form-group">
+              <input type="text"   name="verficationcode" maxlength="5" autocomplete="off" required  style="width: 200px;"  placeholder="Enter Captcha" autofocus />&nbsp;
+              <!--Cpatcha Image -->
+              <img src="captcha.php">
+              </div>
 		
         <button type="submit" class="btn btn-default" name="submit">Sign In</button>
 
         <a href=<?php echo $register_url; ?> class="btn btn-default">Sign Up</a>
 		
  </form>
- <?php  unset($_SESSION['captcha']); // To reset the captcha ?>
+ 
 
  <!-- Split button -->
  <!--

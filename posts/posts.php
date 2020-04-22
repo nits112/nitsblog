@@ -2,6 +2,7 @@
 include("../include/url_posts.php");
 include_once("../include/algos.php");
 
+
  ?>
  
  <style media="screen">

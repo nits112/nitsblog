@@ -1,3 +1,9 @@
+<?php
+include("../include/url_posts.php");
+include_once("../include/algos.php");
+
+ ?>
+
 <style media="screen">
 
 .bg {
@@ -13,9 +19,8 @@ height: 1010px;
 
 /* SHOWS MOST VIEWED POSTS */
 
-include("../include/url_posts.php");
+
 include("../db/dbconnect.php");
-include_once("../include/algos.php");
 ?>
 
 <html>
