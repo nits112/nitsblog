@@ -15,10 +15,6 @@ if(isset($_POST['submit'])) {
 
 	include("../db/dbconnect.php");
 
-	$confpass = $_POST['confirm_password'];
-
-	if ($password==$confpass) then {
-
 	/* CHECK if same user or email exists or not ? */
 	$query="SELECT * FROM users , users_buffer WHERE username='$username' OR emailid='$emailid' ";
 	$result=mysqli_query($conn , $query);
@@ -32,20 +28,8 @@ if(isset($_POST['submit'])) {
 		$query="INSERT INTO users_buffer (username, firstname, password, emailid)
 				VALUES ('$username','$firstname','$password','$emailid')";
 		mysqli_query($conn , $query);
-		echo "<script>
-			alert('Your account has been successfully registered and request is pending with Admin.');
-			window.location.href='../index.php';
-			</script>";
-
-		
+		header("location:../index.php");
 	}
-
-} else {
-	echo "<script>
-	alert('Passwords do not match');
-	window.location.href='../include/frame_register.php';
-	</script>";
-}
 
 
 }
