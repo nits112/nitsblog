@@ -28,8 +28,7 @@
 
       <div class="form-group">
         <div>
-          <textarea class="form-control" id="commentDesc" placeholder="Comment here..." name="commentDesc" required>
-          </textarea>
+          <textarea class="form-control" id="commentDesc" placeholder="Comment here..." name="commentDesc" required></textarea>
         </div>
       </div>
 
