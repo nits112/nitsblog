@@ -32,6 +32,13 @@
     </div>
   </div>
 				
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="cnfpwd">Confirm Password:</label>
+    <div class="col-sm-5">
+      <input type="password" class="form-control" id="cnfpwd" placeholder="" name="confpassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[^a-zA-Z\d])(?=.*[A-Z]).{10,}" title="Must contain at least one number and one uppercase and lowercase letter,one special character and at least 10 or more characters" required>
+    </div>
+  </div>
+  
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-5">
       <button type="submit" class="btn btn-default" name="submit">Register</button>
