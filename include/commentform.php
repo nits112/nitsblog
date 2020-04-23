@@ -15,7 +15,7 @@
         $result=mysqli_query($conn , $query);
 
         if($result) {
-            echo "done";
+           
         }
 
         header("location:".$_SERVER['HTTP_REFERER']);
@@ -28,7 +28,7 @@
 
       <div class="form-group">
         <div>
-          <textarea class="form-control" id="commentDesc" placeholder="Comment here..." name="commentDesc">
+          <textarea class="form-control" id="commentDesc" placeholder="Comment here..." name="commentDesc" required>
           </textarea>
         </div>
       </div>
