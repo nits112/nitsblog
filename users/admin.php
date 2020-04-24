@@ -23,12 +23,11 @@ else {
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#posts">Post Requests</a></li>
     <li><a data-toggle="tab" href="#acc">Account Requests</a></li>
-    <li><a data-toggle="tab" href="#user">User Details</a></li>
-		<li><a data-toggle="tab" href="#messages">Messages</a></li>
+    
   </ul>
 
   <div class="tab-content">
-    <div id="posts" class="tab-pane fade in active">
+    <div id="posts" class="tab-pane fade active">
       <p>
 				<?php
 						include("../include/post_request.php");
@@ -44,21 +43,7 @@ else {
 			</p>
     </div>
 
-    <div id="user" class="tab-pane fade">
-      <p>
-				<?php
-				   include("userlist.php");
-				?>
-			</p>
-    </div>
-
-		<div id="messages" class="tab-pane fade">
-			<p>
-				<?php
-					 include("../include/messages.php");
-				?>
-			</p>
-		</div>
+   
 
   </div>
 </div>
