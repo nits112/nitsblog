@@ -17,8 +17,7 @@ else {
 
 
 <body>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ 
 <div class="container">
   <h2>Admin Panel</h2>
   <ul class="nav nav-tabs">
@@ -29,7 +28,7 @@ else {
   </ul>
 
   <div class="tab-content">
-    <div id="posts" class="tab-pane fade active">
+    <div id="posts" class="tab-pane fad in active">
       <p>
 				<?php
 						include("../include/post_request.php");
