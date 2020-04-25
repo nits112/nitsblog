@@ -34,25 +34,4 @@ if($result) {
 	echo "failed";
 }
 
-/*
-$query="SELECT *
-		FROM  users as u , user_post as up
-		WHERE up.postAuthor='$user' AND u.username='$user'
-		";
-
-$result=mysqli_query($conn , $query);
-
-if($result) {
-
-	if(mysqli_num_rows($result) > 0 ) {
-		while($post=mysqli_fetch_assoc($result)) {
-			echo "<br>";
-			print_r($post);
-		}
-	}
-
-} else {
-	echo "No such Posts";
-}
-*/
 ?>

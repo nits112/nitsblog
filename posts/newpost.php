@@ -30,15 +30,6 @@ if(isset($_POST['submit'])) {
 
 /* * * * * POST Form * * * * */
 else {
-	/*
-	echo "
-		<form action='newpost.php' method='POST' >
-			Title : <input type='text' name='title'></br>
-			Description : <input type='text' name='description'></br>
-			Tags : <input type='text' name='tag'></br>
-			<input type='submit' name='submit' value='Publish'></br>
-		</form>
-	";*/
 
 	include("../include/frame_newpost.php");
 
