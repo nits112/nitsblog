@@ -10,10 +10,9 @@ height: 1010px;
 </style>
 
 <?php
-if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") {
+if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "on") {
     $location = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     header('HTTP/1.1 301 Moved Permanently');
-    header('Location: ' . $location);
     exit;
 }
 
@@ -30,6 +29,7 @@ $contact_us_url='users/contact_us.php';
 $profile_url='../users/profile.php';
 
 session_start();
+
 include("include/bootstrap_cdn.php");
 include("include/navbar.php");
 
