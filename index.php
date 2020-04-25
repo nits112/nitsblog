@@ -10,11 +10,6 @@ height: 1010px;
 </style>
 
 <?php
-if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "on") {
-    $location = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-    header('HTTP/1.1 301 Moved Permanently');
-    exit;
-}
 
 $index_url='index.php';
 $posts_url='posts/posts.php';
