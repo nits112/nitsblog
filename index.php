@@ -10,6 +10,13 @@ height: 1010px;
 </style>
 
 <?php
+if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") {
+    $location = 'https://nits-blog.herokuapp.com' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: ' . $location);
+    exit;
+}
+
 $index_url='index.php';
 $posts_url='posts/posts.php';
 $top_posts_url='posts/topposts.php';
