@@ -53,8 +53,8 @@ if(isset($_POST['submit'])) {
 				$_SESSION['username']=$username;
 				$_SESSION['password']=$password;
 				/* user type */
-				$detail=mysqli_fetch_assoc($result);
-				$_SESSION['usertype']=$detail['usertype'];
+				
+				$_SESSION['usertype']=$deta['usertype'];
 
 				/* Redirect to current / previous page*/
 				header('Location: ' . $_SERVER['HTTP_REFERER']);
