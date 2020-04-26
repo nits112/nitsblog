@@ -1,0 +1,5 @@
+//Rewrite to www
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^nitsblog.herokuapp.com[nc]
+RewriteRule ^(.*)$ http://www.nitsblog.herokuapp.com/$1 [r=301,nc]
