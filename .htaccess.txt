@@ -1,5 +1,5 @@
 
 RewriteEngine On
 RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} ^(www\.)?domain\.com$ [NC]
-RewriteRule ^(.*)$ https://www.domain.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^(www\.)?nits-blog.herokuapp\.com$ [NC]
+RewriteRule ^(.*)$ https://www.nits-blog.herokuapp.com/$1 [L,R=301]
