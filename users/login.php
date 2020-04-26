@@ -8,7 +8,7 @@ include("../include/url_users.php");
 
 if(isset($_POST['submit'])) {
 
-	$username=htmlspecialchars($_POST['username']);
+	$username=$_POST['username'];
 	$password=$_POST['password'];
 	$captcha;
 	if(isset($_POST['g-recaptcha-response']))
@@ -37,10 +37,11 @@ if(isset($_POST['submit'])) {
         if($responseKeys["success"]) {
 			
 			/* Check login  correctness*/
-					$password = $hash;
-					$query="SELECT * FROM users WHERE username='$username' AND password='$hash' ";
-					$result=mysqli_query($conn , $query);
-			//$rows=1;
+	
+	$query="SELECT * FROM users WHERE username='$username'";
+	$result=mysqli_query($conn , $query);
+	$deta=mysqli_fetch_assoc($result);
+	$hashpass=$deta['password'];
 
 			/* query failed */
 			if($result==FALSE) {
@@ -48,7 +49,7 @@ if(isset($_POST['submit'])) {
 				header("location:login.php");
 			}
 
-			if(mysqli_num_rows($result) == 1) {
+			if(password_verify($password,$hashpass)) {
 				$_SESSION['username']=$username;
 				$_SESSION['password']=$password;
 				/* user type */
