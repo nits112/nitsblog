@@ -13,7 +13,7 @@ if(isset($_POST['submit'])) {
 	$emailid=$_POST['emailid'];
 	$password=$_POST['password'];
 	$confpassword=$_POST['confpassword'];
-
+	$hash=password_hash($password, bcrypt,$options = ['cost' => 12]);
 	include("../db/dbconnect.php");
 	
 	if($password == $confpassword) {
@@ -27,9 +27,9 @@ if(isset($_POST['submit'])) {
 		header("location:register.php");
 	}
 	else {
-		$password = md5($password);
+		//$password = md5($password);
 		$query="INSERT INTO users_buffer (username, firstname, password, emailid)
-				VALUES ('$username','$firstname','$password','$emailid')";
+				VALUES ('$username','$firstname','$hash','$emailid')";
 		mysqli_query($conn , $query);
 	
 	
