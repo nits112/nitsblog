@@ -8,9 +8,9 @@ if(isset($_SESSION['username'])) {
 
 if(isset($_POST['submit'])) {
 
-	$username=$_POST['username'];
-	$firstname=$_POST['firstname'];
-	$emailid=$_POST['emailid'];
+	$username=htmlspecialchars($_POST['username']);
+	$firstname=htmlspecialchars($_POST['firstname']);
+	$emailid=htmlspecialchars($_POST['emailid']);
 	$password=$_POST['password'];
 	$confpassword=$_POST['confpassword'];
 

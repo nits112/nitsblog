@@ -8,7 +8,7 @@ include("../include/url_users.php");
 
 if(isset($_POST['submit'])) {
 
-	$username=$_POST['username'];
+	$username=htmlspecialchars($_POST['username']);
 	$password=$_POST['password'];
 	$captcha;
 	if(isset($_POST['g-recaptcha-response']))
