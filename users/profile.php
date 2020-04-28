@@ -29,9 +29,14 @@ if($result) {
 			}
 			include("../include/frame_profile_detail.php");
 		}
+	}else
+	{
+		echo "<script>alert('Sorry! This user account is deleted..');
+			window.location.href='../posts/posts.php';</script>";
 	}
 } else {
-	echo "failed";
+	echo "<script>alert('Sorry! Error in fetching..');
+			window.location.href='../posts/posts.php';</script>";
 }
 
 ?>

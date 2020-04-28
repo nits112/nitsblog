@@ -19,14 +19,23 @@ if(isset($_POST['submit'])) {
 	if($password == $confpassword) {
 
 	/* CHECK if same user or email exists or not ? */
-	$query="SELECT * FROM users , users_buffer WHERE username='$username' OR emailid='$emailid' ";
+	$query="SELECT * from users_buffer t WHERE t.username = '$username' OR t.emailid = '$emailid'";
+	$query2="SELECT * from users t WHERE t.username = '$username' OR t.emailid = '$emailid'";
 	$result=mysqli_query($conn , $query);
+	$result2=mysqli_query($conn , $query2);
 	$rows=mysqli_num_rows($result);
+	$rows2=mysqli_num_rows($result2);
 
 	if($rows > 0) {
-		header("location:register.php");
-	}
-	else {
+		
+		echo "<script>alert('User exists please select new username or email id');
+		window.location.href='register.php';</script>";
+	}else { 
+		if($rows2 > 0){
+		echo "<script>alert('User exists please select new username or email id');
+		window.location.href='register.php';</script>";
+		
+		}else {
 		$hashpass=password_hash($password, PASSWORD_BCRYPT);		
 		$query="INSERT INTO users_buffer (username, firstname, password, emailid)
 		VALUES ('$username','$firstname','$hashpass','$emailid')";
@@ -35,8 +44,9 @@ if(isset($_POST['submit'])) {
 	
 			echo "<script>alert('Your account have been registered and pending for approval with Admin');
 			window.location.href='../index.php';</script>";
+		}
 	}
-	} 
+	}	
 	else
 	{
 		echo "<script>alert('Password do not match');

@@ -3,19 +3,19 @@
 include("../db/dbconnect.php");
 
 if(!isset($_SESSION['username'])){
-	header('Location:../index.php');
+  header('Location:../index.php');
 }
 else if($_SESSION['usertype']!='admin') {
   header('Location:../index.php');
 }
 else {
-	$user=$_SESSION['username'];
+  $user=$_SESSION['username'];
 }
 
 /* fetch user detail */
-$query="SELECT * FROM messages ORDER BY id DESC";
-
-$result=mysqli_query($conn , $query );
+$query=$conn->prepare("SELECT * FROM messages ORDER BY id DESC");
+$query->execute();
+$result=$query->get_result();
 
 echo "
 <table class='table'>
@@ -31,9 +31,9 @@ echo "
 
 if($result) {
 
-	if(mysqli_num_rows($result)>0) {
-		while($row=mysqli_fetch_assoc($result)) {
-			//include("../include/frame_profile_detail.php");
+  if($result->num_rows >0) {
+    while($row=$result->fetch_assoc()) {
+      //include("../include/frame_profile_detail.php");
       echo "<tr>";
         echo "<td>".$row['name']."</td>";
         echo "<td>".$row['email']."</td>";
@@ -49,7 +49,7 @@ if($result) {
 
   }
 } else {
-	echo "failed";
+  echo "failed";
 }
 
 ?>

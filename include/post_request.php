@@ -11,17 +11,17 @@ else {
 }
 
 /* fetch user detail */
-$query="SELECT * FROM posts_buffer";
-
-$result=mysqli_query($conn , $query );
+$query=$conn->prepare("SELECT * FROM posts_buffer");
+$query->execute();
+$result=$query->get_result();
 
 if($result) {
-  if(mysqli_num_rows($result)==0) {
+  if($result->num_rows == 0) {
       echo "No more requests to show";
   }
 
-	else if(mysqli_num_rows($result)>0) {
-		while($row=mysqli_fetch_assoc($result)) {
+	else if($result->num_rows >0) {
+		while($row=$result->fetch_assoc()) {
 		    include("frame_post_requested.php");
     }
   }

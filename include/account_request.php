@@ -2,26 +2,27 @@
 include("../db/dbconnect.php");
 
 if(!isset($_SESSION['username'])){
-	header('Location:../index.php');
+  header('Location:../index.php');
 }
 else if($_SESSION['usertype']!='admin') {
   header('Location:../index.php');
 }
 else {
-	$user=$_SESSION['username'];
+  $user=$_SESSION['username'];
 }
 
 /* fetch user detail */
-$query="SELECT * FROM users_buffer";
+$query = $conn->prepare("SELECT * FROM users_buffer");
+$query->execute();
 
-$result=mysqli_query($conn , $query );
+$result = $query->get_result();
 
 if($result) {
-  if(mysqli_num_rows($result)==0) {
+  if($result->num_rows == 0) {
       echo "No more requests to show";
   }
 
-	else if(mysqli_num_rows($result)>0) {
+  else if($result->num_rows > 0) {
     echo "
     <table class='table'>
         <tr>
@@ -29,7 +30,7 @@ if($result) {
           <th>Username</th>
           <th>Name</th>
           <th>Email</th>
-          <th>Action</th>
+          <th>Password</th>
           <th>Accept</th>
           <th>Delete</th>
         </tr>
@@ -38,8 +39,8 @@ if($result) {
     ";
 
 
-		while($row=mysqli_fetch_assoc($result)) {
-			//include("../include/frame_profile_detail.php");
+    while($row = $result->fetch_assoc()) {
+      //include("../include/frame_profile_detail.php");
       echo "<tr>";
         echo "<td>".$row['id']."</td>";
         echo "<td>".$row['username']."</td>";
@@ -63,7 +64,7 @@ if($result) {
 
   }
 } else {
-	echo "failed";
+  echo "failed";
 }
 
 ?>

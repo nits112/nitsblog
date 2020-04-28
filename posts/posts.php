@@ -19,11 +19,12 @@ height: 1010px;
 <?php
 
 	/* CHECK if same user or email exists or not ? */
-	$query="SELECT * FROM posts ORDER BY postTime DESC";
-	$result=mysqli_query($conn , $query);
-
-	if(mysqli_num_rows($result) > 0) {
-		while($post=mysqli_fetch_assoc($result)) {
+	$query = $conn->prepare("SELECT * FROM posts ORDER BY postTime DESC");
+	$query->execute();
+	$result = $query->get_result();
+	
+	if($result->num_rows > 0) {
+		while($post = $result->fetch_assoc()) {
 					$id=$post['postID'];
 					$title=$post['postTitle'];
 					$desc=$post['postDesc'];

@@ -13,9 +13,9 @@ else {
 }
 
 /* fetch user detail */
-$query="SELECT * FROM users ";
-
-$result=mysqli_query($conn , $query );
+$query = $conn->prepare("SELECT * FROM users ");
+$query->execute();
+$result = $query->get_result();
 
 echo "
 <table class='table'>
@@ -24,7 +24,7 @@ echo "
       <th>Username</th>
       <th>Name</th>
       <th>Email</th>
-      <th>Action</th>
+      <th>Password</th>
       <th>Delete</th>
     </tr>
 
@@ -33,8 +33,8 @@ echo "
 
 if($result) {
 
-	if(mysqli_num_rows($result)>0) {
-		while($row=mysqli_fetch_assoc($result)) {
+	if($result->num_rows > 0) {
+		while($row= $result->fetch_assoc()) {
 			//include("../include/frame_profile_detail.php");
       echo "<tr>";
         echo "<td>".$row['id']."</td>";

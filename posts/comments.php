@@ -1,7 +1,9 @@
 <?php
     /* fetch comments from db */
-      $query="SELECT * FROM comments WHERE postID='$id'  ";
-      $result=mysqli_query($conn , $query);
+      $query = $conn->prepare("SELECT * FROM comments WHERE postID = ?");
+    $query->bind_param('i',$id);
+    $query->execute();
+      $result = $query->get_result();
 
       if($result) {
         echo "
@@ -9,8 +11,8 @@
         Comments
         </div>
         ";
-          if(mysqli_num_rows($result) > 0) {
-            while($comment=mysqli_fetch_assoc($result)) {
+           if($result->num_rows > 0) {
+            while($comment = $result->fetch_assoc()) {
                 include("../include/frame_comment.php");
             }
           }

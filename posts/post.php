@@ -1,4 +1,4 @@
-<?php
+33<?php
 
 include("../db/dbconnect.php");
 include("../include/url_posts.php");
@@ -8,10 +8,12 @@ include_once("../include/algos.php");
 	if(isset($_REQUEST['id'])) {
 		$id=$_REQUEST['id'];
 
-		$query="SELECT * FROM posts WHERE postID='$id'";
-		$result=mysqli_query($conn , $query);
+		$query=$conn->prepare("SELECT * FROM posts WHERE postID = ?");
+		$query->bind_param('i',$id);
+		$query->execute();
+		$result=$query->get_result();
 
-		if($post=mysqli_fetch_assoc($result)) {
+		if($post = $result->fetch_assoc()) {
 				$id=$post['postID'];
 				$title=$post['postTitle'];
 				$desc=$post['postDesc'];
@@ -30,11 +32,13 @@ include_once("../include/algos.php");
 	if(isset($_REQUEST['tags'])) {
 		$tag=$_REQUEST['tags'];
 
-		$query="SELECT * FROM posts WHERE postTag='$tag'";
-		$result=mysqli_query($conn , $query);
+		$query=$conn->prepare("SELECT * FROM posts WHERE postTag= ?");
+		$query->bind_param('i',$tag);
+		$query->execute();
+		$result=$query->get_result();
 
-		if(mysqli_num_rows($result) > 0) {
-			while($post=mysqli_fetch_assoc($result)) {
+		if($result->num_rows > 0) {
+			while($post = $result->fetch_assoc()) {
 				$id=$post['postID'];
 				$title=$post['postTitle'];
 				$desc=$post['postDesc'];
@@ -54,11 +58,13 @@ include_once("../include/algos.php");
 if(isset($_REQUEST['user'])) {
 	$user=$_REQUEST['user'];
 
-	$query="SELECT * FROM posts WHERE postAuthor='$user'";
-	$result=mysqli_query($conn , $query);
+	$query=$conn->prepare("SELECT * FROM posts WHERE postAuthor= ?");
+	$query->bind_param('i',$user);
+	$query->execute();
+	$result=$query->get_result();
 
-	if(mysqli_num_rows($result) > 0) {
-		while($post=mysqli_fetch_assoc($result)) {
+	if($result->num_rows > 0) {
+			while($post = $result->fetch_assoc()) {
 			$id=$post['postID'];
 			$title=$post['postTitle'];
 			$desc=$post['postDesc'];
