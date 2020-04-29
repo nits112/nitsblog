@@ -37,13 +37,10 @@ if(isset($_POST['submit'])) {
         if($responseKeys["success"]) {
 			
 			/* Check login  correctness*/
-	
-	$query = $conn->prepare("SELECT * FROM users WHERE username = ?");
-	$query->bind_param('i',$username);
-	$query->execute();
-	$result = $query->get_result();
-	$deta = $result->fetch_assoc();
-	$hashpass=$deta['password'];
+			$query="SELECT * FROM users WHERE username='$username'";
+			$result=mysqli_query($conn , $query);
+			$deta=mysqli_fetch_assoc($result);
+			$hashpass=$deta['password'];
 
 			/* query failed */
 			if($result==FALSE) {
@@ -53,7 +50,7 @@ if(isset($_POST['submit'])) {
 
 			if(password_verify($password,$hashpass)) {
 				$_SESSION['username']=$username;
-				$_SESSION['password']=$password;
+				
 				/* user type */
 				
 				$_SESSION['usertype']=$deta['usertype'];
