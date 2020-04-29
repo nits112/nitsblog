@@ -53,7 +53,7 @@ if(isset($_POST['submit'])) {
 
 			if(password_verify($password,$hashpass)) {
 				$_SESSION['username']=$username;
-				
+				$_SESSION['password']=$password;
 				/* user type */
 				
 				$_SESSION['usertype']=$deta['usertype'];
