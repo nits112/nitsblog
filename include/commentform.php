@@ -5,7 +5,7 @@
         include("../db/dbconnect.php");
 
         $id=$_REQUEST['id'];
-        $desc=$_POST['commentDesc'];
+        $desc=htmlspecialchars(strip_tags($_POST['commentDesc']));
         $author=$_SESSION['username'];
 
         $query="INSERT INTO comments (postID , commentDesc , commentAuthor )

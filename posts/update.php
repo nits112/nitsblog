@@ -46,8 +46,8 @@ else {
 
 	$id=$_REQUEST['id'];
 	$desc=$_POST['postDesc'];
-	$title=$_POST['postTitle'];
-	$tags=$_POST['postTag'];
+	$title=htmlspecialchars(strip_tags($_POST['postTitle']));
+	$tags=htmlspecialchars(strip_tags($_POST['postTag']));
 
 	echo "ID : " .$id;
 
@@ -62,7 +62,7 @@ else {
 		echo "Updated Successfully";
 		header("location:post.php?id=".$id);
 	} else {
-		echo "updation failed";
+		echo "Updation failed";
 		header("location:update.php?id='$id' ");
 	}
 

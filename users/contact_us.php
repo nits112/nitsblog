@@ -5,9 +5,9 @@ include("../include/url_users.php");
 
 <?php
     if (isset($_POST["submit"])) {
-        $name=$_POST['name'];
-        $email=$_POST['email'];
-        $msg=$_POST['message'];
+        $name=htmlspecialchars(strip_tags($_POST['name']));
+        $email=htmlspecialchars(strip_tags($_POST['email']));
+        $msg=htmlspecialchars(strip_tags($_POST['message']));
 
           $query="INSERT INTO messages (name , email , message )
           VALUES (' $name' , '$email' , '$msg' )";
@@ -17,7 +17,7 @@ include("../include/url_users.php");
           if($result) {
             echo "Message sent successfully";
           } else {
-            echo "Some error occured.... :-(";
+            echo "Please enter valid inut";
           }
       }
 

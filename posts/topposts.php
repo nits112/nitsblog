@@ -46,10 +46,14 @@ include("../db/dbconnect.php");
 <h2 style="text-align:center">Author's Desk</h2>
 
 <div class="card">
-  <img src="img/23.jpeg" alt="John" style="width:100%">
+  <img src="img/23.jpeg" alt="Admin Pic" style="width:100%">
   <h1>Nitin Sankhe</h1>
-  <p class="title">Blog Owner</p>
+  <p class="title">Blog Admin</p>
   <p>I am passionate about sharing the food secrets.</p>
+  <p>E-mail Id: xxxxx@xyz.com</p>
+  <p>Hobby: Cooking</p>
+  <p>Contact: +353 XXXXXXXX</p>
+
   <div style="margin: 24px 0;">
    
   </div>

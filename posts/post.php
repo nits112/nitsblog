@@ -6,7 +6,7 @@ include_once("../include/algos.php");
 
 	/* post.php?id=2 */
 	if(isset($_REQUEST['id'])) {
-		$id=$_REQUEST['id'];
+		$id=htmlspecialchars($_REQUEST['id']);
 
 		$query=$conn->prepare("SELECT * FROM posts WHERE postID = ?");
 		$query->bind_param('i',$id);
@@ -30,7 +30,7 @@ include_once("../include/algos.php");
 
 		/* post.php?tags=dp */
 	if(isset($_REQUEST['tags'])) {
-		$tag=$_REQUEST['tags'];
+		$tag=htmlspecialchars($_REQUEST['tags']);
 
 		$query=$conn->prepare("SELECT * FROM posts WHERE postTag= ?");
 		$query->bind_param('i',$tag);
@@ -56,7 +56,7 @@ include_once("../include/algos.php");
 
 	/* post.php?user=qt */
 if(isset($_REQUEST['user'])) {
-	$user=$_REQUEST['user'];
+	$user=htmlspecialchars($_REQUEST['user']);
 
 	$query=$conn->prepare("SELECT * FROM posts WHERE postAuthor= ?");
 	$query->bind_param('i',$user);
