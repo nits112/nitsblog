@@ -1,4 +1,4 @@
-33<?php
+<?php
 
 include("../db/dbconnect.php");
 include("../include/url_posts.php");
