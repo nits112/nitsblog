@@ -29,10 +29,15 @@ if(isset($_POST['submit'])) {
         }
         $secretKey = "6LeH0ewUAAAAALNq09oJkn6YtIbdN8x3PAnY3GFM";
         $ip = $_SERVER['REMOTE_ADDR'];
+
         // post request to server
         $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
         $response = file_get_contents($url);
         $responseKeys = json_decode($response,true);
+
+
+
+
         // should return JSON with success as true
         if($responseKeys["success"]) {
 			
@@ -59,27 +64,18 @@ if(isset($_POST['submit'])) {
 				header('Location: ' . $_SERVER['HTTP_REFERER']);
 				
 			} else {
-					echo "
-						<div class=\"alert alert-danger container\" role=\"alert\">
+					echo "<div class=\"alert alert-danger container\" role=\"alert\">
 						<span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>
 						<span class=\"sr-only\">Error:</span>
 							Invalid Username or Password
-						</div>
-						";
-					}
-                
-        } 
+						</div>";					}            } 
 		else {
                
-				echo "
-						<div class=\"alert alert-danger container\" role=\"alert\">
+				echo "<div class=\"alert alert-danger container\" role=\"alert\">
 						<span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>
 						<span class=\"sr-only\">Error:</span>
 							You are spammer ! 
-						</div>
-						";
-        }
-
+						</div>";        }
 	
 } else {
 			if(!isset($_SESSION['username'])) {
@@ -88,12 +84,7 @@ if(isset($_POST['submit'])) {
 		  <span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>
 		  <span class=\"sr-only\">Error:</span>
 		   Please Login
-			</div>
-			";
+			</div>			";
 			} else {
-				header("location:../index.php");
-			}
-}
-
-
+				header("location:../index.php");			}}
 ?>
